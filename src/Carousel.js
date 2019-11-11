@@ -6,7 +6,7 @@ class Carousel extends React.Component {
     active: 0
   };
 
-  static getDrivedStateFromProps({ media }) {
+  static getDerivedStateFromProps({ media }) {
     let photos = ["https://placeorgi.com/600/600"];
 
     if (media.length) {
@@ -30,8 +30,7 @@ class Carousel extends React.Component {
             // eslint-disable-next-line
             <img
               key={photo}
-              on
-              onClick={this.handleIndexClick}
+              onClick={this.handleIndexClick.bind(this)}
               data-index={index}
               src={photo}
               className={index === active ? "active" : ""}
